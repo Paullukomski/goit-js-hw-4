@@ -1,16 +1,15 @@
 "use strict";
+
 function calcAverageCalories(days) {
-  let calory = 0;
-  let week = 0;
-  for (let dey of days) {
-    calory += dey.calories;
-    if (days.lenght === 0) {
-      calory = 0;
-    } else {
-      week = calory / days.length;
-    }
+  if (days.length === 0) {
+    return 0;
   }
-  return week;
+  let calorieDays = 0;
+  for (let index = 0; index < days.length; index += 1) {
+    calorieDays += days[index].calories;
+  }
+  let result = calorieDays / days.length;
+  return Math.round(result);
 }
 
 console.log(
